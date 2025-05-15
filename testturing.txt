@@ -1,0 +1,20 @@
+// Programul se va termina cand nu mai exista tranzitie de facut
+// La final vom afisa memoria din spate
+// 
+//
+//
+
+[States] : q0 q1 
+[InitialState] = q0 
+[FinalStates] : q1
+// Daca punem ceva in paranteza acela e un string atom, care in program va lua exact string-ul din paranteza
+[Memory] = (  $    $$  )
+
+// Tranzitiile vor avea 5 elem in urmt format
+// {stare,car_conditie,starea_urmt,car_de_inlocuit,LEFTorRIGHT}
+// vor fi pe o singura linie cu , intre ele, fara spatii
+// forma prescurtata {stare,starea_urmt,LEFTorRIGHT} e la fel ca {stare,eps,starea_urmt,eps,LEFTorRIGHT}
+[Rules] {
+    {q0, ,q0, ,R}
+    {q0,$,q0, ,R}
+}

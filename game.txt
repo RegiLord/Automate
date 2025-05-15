@@ -1,0 +1,44 @@
+[States] : Entrance Hallway Kitchen Library Exit Afara 
+[Alphabet] : w a s d p
+[InitialState] = Entrance
+[Rules] {
+    Hallway w Afara
+    Afara s Hallway
+    Afara w Afara
+    Afara d Afara
+    Afara a Afara
+    Afara p Afara
+
+    Entrance w Hallway
+    Entrance a Entrance
+    Entrance s Entrance
+    Entrance d Entrance
+    Entrance p Entrance
+
+    Hallway a Kitchen
+    Hallway d Library
+    Hallway s Entrance
+    Hallway w Hallway
+    Hallway p Hallway
+
+    Library a Hallway
+    Library s $ eps Exit
+    Library s eps eps Library
+    Library d Library
+    Library w Library
+    Library p Library
+
+    Exit w eps $ Library
+    Exit d Exit
+    Exit a Exit
+    Exit s Exit
+    Exit p Exit
+
+    Kitchen w Kitchen
+    Kitchen a Kitchen
+    Kitchen s Kitchen
+    Kitchen d Hallway
+    Kitchen p eps $ Kitchen
+    Kitchen p Kitchen
+}
+[FinalStates] : Exit

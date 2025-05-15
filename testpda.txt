@@ -1,0 +1,17 @@
+/ la pda trebuie la functia de schimbare sa avem
+/ 5 termeni
+/ si sa pastram si o stiva
+/ 5 termeni reprezeinta
+/ starea i , intrarea a1, pop la a2, push la a3, starea j
+/ a1, a2, a3 pot fi eps care inseamna ca nu primim, intrare
+[States] : q0 q1 q2 q3
+[Alphabet] : 0 1 eps
+[InitialState] = q0 
+[FinalStates] : q3
+[Rules] {
+    q0 eps eps $ q1
+    q1 0 eps 0 q1
+    q1 1 0 eps q2 
+    q2 1 0 eps q2
+    q2 eps $ eps q3
+}
