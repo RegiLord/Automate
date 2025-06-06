@@ -201,44 +201,42 @@ if len(sys.argv) > 1:
     AutomatFile = sys.argv[1]
     Automat = ReadAutoamt(AutomatFile)
         
-    if len(sys.argv) == 3:
-        String = ''
-        if len(sys.argv) > 2:
-            String = sys.argv[2]
+    if len(sys.argv) == 3:       
+        if sys.argv[2] == "--inline": 
+            current_state = Automat['InitialState']
+            print("Enter exit to finish string")
+            
+            
+            while True:
+                print(f'{current_state}  {Automat["Stiva"]}')
+                symbol = input("Input: ")   
+                if symbol not in Automat["Alphabet"] and symbol != "exit":
+                    print(f'Invalid, {symbol} not in alphabet. Try Again!')
+                    continue
+                if symbol == "exit":
+                    break
 
-        print("Automat file: ", sys.argv[1])
-
-        print("string to check: ", String)
-        CheckStringValidity(Automat, String)
-
-        print(CheckString(Automat, String))
-    else:
-        if sys.argv[3] != '--inline':
-            print(f'Unknown flag {sys.argv[4]}')
-            exit(1)
-        
-        current_state = Automat['InitialState']
-        print("Enter exit to finish string")
-        
-        
-        while True:
-            print(f'{current_state}  {Automat["Stiva"]}')
-            symbol = input("Input: ")   
-            if symbol not in Automat["Alphabet"] and symbol != "exit":
-                print(f'Invalid, {symbol} not in alphabet. Try Again!')
-                continue
-            if symbol == "exit":
-                break
-
-            current_state = GetNextState(Automat, current_state, symbol)
-            if current_state == False:
-                print(f'False no rule for case')
-                exit(1)
-                        
-        if current_state in Automat["FinalStates"]:
-            print(True)
+                current_state = GetNextState(Automat, current_state, symbol)
+                if current_state == False:
+                    print(f'False no rule for case')
+                    exit(1)
+                            
+            if current_state in Automat["FinalStates"]:
+                print(True)
+            else:
+                print(f'False not in final states')
         else:
-            print(f'False not in final states')
+            String = ''
+            if len(sys.argv) > 2:
+                String = sys.argv[2]
+
+            print("Automat file: ", sys.argv[1])
+
+            print("string to check: ", String)
+            CheckStringValidity(Automat, String)
+
+            print(CheckString(Automat, String))
+    
 else:
     AutomatFile = "testpda.txt"
     Automat = ReadAutoamt(AutomatFile)

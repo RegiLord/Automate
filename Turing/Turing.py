@@ -76,6 +76,8 @@ def ReadAutoamt(AutomatFile):
             else: 
                 pass
         else:
+            if(len(line.split()) == 0):
+                continue
             if line.find('}') != -1 and line.find('{') == -1:
                 inBlock = False
                 continue
@@ -83,7 +85,6 @@ def ReadAutoamt(AutomatFile):
             e = line[line.find('{'):]
             e = e[1:-2]
             e = e.split(',')
-            print(e)
             if len(e) == 0:
                 continue
                 
@@ -176,45 +177,13 @@ def CheckStringValidity(Automat, String):
 if len(sys.argv) > 1:
     AutomatFile = sys.argv[1]
     Automat = ReadAutoamt(AutomatFile)
-        
-    if len(sys.argv) == 3:
-        String = ''
-        if len(sys.argv) > 2:
-            String = sys.argv[2]
 
-        print("Automat file: ", sys.argv[1])
+    print("Automat file: ", sys.argv[1])
+    print(f'Checking memory ({Automat["Memory"]})')
+    print(CheckAutomat(Automat))
+    print(f'After processing ({Automat["Memory"]})')
 
-        print("string to check: ", String)
-        CheckStringValidity(Automat, String)
 
-        print(CheckString(Automat, String))
-    else:
-        if sys.argv[3] != '--inline':
-            print(f'Unknown flag {sys.argv[4]}')
-            exit(1)
-        
-        current_state = Automat['InitialState']
-        print("Enter exit to finish string")
-        
-        
-        while True:
-            print(f'{current_state}  {Automat["Stiva"]}')
-            symbol = input("Input: ")   
-            if symbol not in Automat["Alphabet"] and symbol != "exit":
-                print(f'Invalid, {symbol} not in alphabet. Try Again!')
-                continue
-            if symbol == "exit":
-                break
-
-            current_state = GetNextState(Automat, current_state, symbol)
-            if current_state == False:
-                print(f'False no rule for case')
-                exit(1)
-                        
-        if current_state in Automat["FinalStates"]:
-            print(True)
-        else:
-            print(f'False not in final states')
 else:
     AutomatFile = "testturing.txt"
     Automat = ReadAutoamt(AutomatFile)
