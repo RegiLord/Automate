@@ -1,7 +1,20 @@
-Pentru rulare se scrie in terminal cel mai usor
+Pentru rulare DFA si NFA
 ```bash
+python3 <fisier.py> <nume_fisier_automat> <string_to_check>
+```
+Pentru rulare PDA
+```bash
+python3 <fisier.py> <nume_fisier_automat> <string_to_check>
+python3 <fisier.py> <nume_fisier_automat> --inline
+```
+Cu inline pentru scrie in real time
+Pentru game.txt comenzile sunt (w - in sus, a - la stanga, s - in jos, d -> la dreapta si p -> pentru a lua cheia)
+
+Pentru rulare Turing
+```bash 
 python3 <fisier.py> <nume_fisier_automat>
 ```
+
 Automate:
 
 1. Def/Nfa:
