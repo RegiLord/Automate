@@ -9,6 +9,7 @@ python3 <fisier.py> <nume_fisier_automat> --inline
 ```
 Cu inline pentru scrie in real time
 Pentru game.txt comenzile sunt (w - in sus, a - la stanga, s - in jos, d -> la dreapta si p -> pentru a lua cheia)
+Iar scriere exit va iesi din program
 
 Pentru rulare Turing
 ```bash 
