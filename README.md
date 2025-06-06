@@ -1,3 +1,7 @@
+Pentru rulare se scrie in terminal cel mai usor
+```bash
+python3 <fisier.py> <nume_fisier_automat>
+```
 Automate:
 
 1. Def/Nfa:
