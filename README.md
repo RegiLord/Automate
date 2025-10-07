@@ -1,12 +1,17 @@
-# Automate
+# Automata
 
-## DFA/Nfa:
-   Fisierul python poate rula si NFA-uri si DFA-uri in functie de daca este introdus simbolul epsilon in reguli sau daca sunt omise niste
-reguli.
-  NFA-ul pentru a evita ciclarea pastreaza o memorie atunci cand intra intr-o stare cu un input anumit si daca ajunge din nou in aceea
-stare cu acelasi input atunci nu mai continue.
+## DFA/NFA:
+   I have implemented a DFA and NFA in python, that used a standardized automata file to define the machine and receives an input in command line as the string to check.
+
+   The DFA code is pretty straightforward, it simply takes the current state and input and moves in the next state. However the NFA was more complicated because of it's nondeterministic nature. The code I wrote has worked for my tests, unfortunately I can't gurantee it's efficiency. It's based upon a memory block that remembers whenever you enter a state what string you've entered the state with.
+   For example:
+```
+   MemoryLog = dict()
+   MemoryLog[state] = ["aaa", "bbb", "bccc", "baaa"]
+```
 
 ### Pentru rulare DFA si NFA
+   
 ```bash
 python3 <fisier.py> <nume_fisier_automat> <string_to_check>
 ```
