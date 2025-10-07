@@ -9,12 +9,17 @@
    MemoryLog = dict()
    MemoryLog[state] = ["aaa", "bbb", "bccc", "baaa"]
 ```
+  This is done so you keep continuing with the input in a recursive method.
 
-### Pentru rulare DFA si NFA
+  PS: The DFA and NFA are implemented in the same python file, the file that differenciates is the automata file.
+
+### Using the DFA/NFA
    
 ```bash
-python3 <fisier.py> <nume_fisier_automat> <string_to_check>
+python3 <file.py> <automata_file_name> <string_to_check>
 ```
+### Editing the automata file
+
 
 Pentru rulare PDA
 ```bash
