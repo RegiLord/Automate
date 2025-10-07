@@ -1,10 +1,10 @@
 # Automata
 
 ## DFA/NFA:
-   I have implemented a DFA and NFA in python, that used a standardized automata file to define the machine and receives an input in command line as the string to check.
+  I have implemented a DFA and NFA in python, that used a standardized automata file to define the machine and receives an input in command line as the string to check.
 
-   The DFA code is pretty straightforward, it simply takes the current state and input and moves in the next state. However the NFA was more complicated because of it's nondeterministic nature. The code I wrote has worked for my tests, unfortunately I can't gurantee it's efficiency. It's based upon a memory block that remembers whenever you enter a state what string you've entered the state with.
-   For example:
+  The DFA code is pretty straightforward, it simply takes the current state and input and moves in the next state. However the NFA was more complicated because of it's nondeterministic nature. The code I wrote has worked for my tests, unfortunately I can't gurantee it's efficiency. It's based upon a memory block that remembers whenever you enter a state what string you've entered the state with.
+  For example:
 ```
    MemoryLog = dict()
    MemoryLog[state] = ["aaa", "bbb", "bccc", "baaa"]
