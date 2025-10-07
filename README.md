@@ -35,10 +35,10 @@ python3 <file.py> <automata_file_name> <string_to_check>
 }
 [FinalStates] : q4
 ```
-  In the States segment you list out the state names with a space between them, same for the Alphabet (the letters of course) and Final States.
-  Initial State is only one so just a single state name.
-  In the Rules category the format is
-    **[state I'm in] [input i need] [state I want to go]**
+  In the States segment you list out the state names with a space between them, same for the Alphabet (the letters of course) and Final States.\
+  Initial State is only one so just a single state name.\
+  In the Rules category the format is\
+    **[state I'm in] [input i need] [state I want to go]**\
   For the epsilon variable write *eps*
 
 Pentru rulare PDA
