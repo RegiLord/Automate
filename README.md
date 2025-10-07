@@ -1,4 +1,4 @@
-#Automate
+# Automate
 
 ## DFA/Nfa:
    Fisierul python poate rula si NFA-uri si DFA-uri in functie de daca este introdus simbolul epsilon in reguli sau daca sunt omise niste
@@ -6,7 +6,7 @@ reguli.
   NFA-ul pentru a evita ciclarea pastreaza o memorie atunci cand intra intr-o stare cu un input anumit si daca ajunge din nou in aceea
 stare cu acelasi input atunci nu mai continue.
 
-###Pentru rulare DFA si NFA
+### Pentru rulare DFA si NFA
 ```bash
 python3 <fisier.py> <nume_fisier_automat> <string_to_check>
 ```
