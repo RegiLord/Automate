@@ -19,7 +19,22 @@
 python3 <file.py> <automata_file_name> <string_to_check>
 ```
 ### Editing the automata file
-
+  The file looks like the following example:
+```
+[States] : q1 q2 q3 q4
+[Alphabet] : 0 1
+[InitialState] = q1
+[Rules] {
+    q1 0 q1
+    q1 1 q1
+    q1 1 q2 
+    q2 0 q3
+    q2 1 q3
+    q3 0 q4
+    q3 1 q4 
+}
+[FinalStates] : q4
+```
 
 Pentru rulare PDA
 ```bash
