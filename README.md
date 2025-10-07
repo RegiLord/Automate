@@ -78,11 +78,24 @@ For the *--inline* option writing exit will finish the sequence
   It is similar to the DFA/NFA automata however the Rules section has changed.\
   The Rules Format is now: **[state we're in][input to check][stack to pop][stack to push][state to go]**
 
-Pentru rulare Turing
+## Turing Machine
+  This time the command line lacks an input to check or more exactly in this case the memory, this is now integrated in the automata file. Using the Turing Machine will return the final state of the memory after executing everything.
+  
+### Using the Turing Machine
 ```bash 
 python3 <fisier.py> <nume_fisier_automat>
 ```
 
-
-3. Masina Turing:
-  Din cauza conceptului de spatii goale fisierul de configurare este un pic sensibil deoarece caracterul spatiu reprezinta un spatiu gol
+### Editing the automata file
+```
+[States] : q0 q1 
+[InitialState] = q0 
+[FinalStates] : q1
+[Memory] = (  $    $$  )
+[Rules] {
+    {q0, ,q0, ,R}
+    {q0,$,q0, ,R}
+}
+```
+  Because of the concept of empty spaec I opted to consider the Memory segment as everything that is in the parantheses, in the example the space is: ..$....$$.. where . is a space.\
+  The rules are formatted as **{state,carry_condition,next_state,carry_to_replace,LEFTorRIGHT}**
